@@ -15,6 +15,16 @@
     --border-color: #4a3622;
 }
 
+/* Couleurs des Dieux */
+.god-aldor { color: #b30000; font-weight: bold; text-shadow: 0px 0px 1px rgba(179,0,0,0.3); }
+.god-vaelis { color: #b8860b; font-weight: bold; text-shadow: 0px 0px 1px rgba(184,134,11,0.3); }
+.god-eldric { color: #00008b; font-weight: bold; text-shadow: 0px 0px 1px rgba(0,0,139,0.3); }
+.god-maera { color: #006400; font-weight: bold; text-shadow: 0px 0px 1px rgba(0,100,0,0.3); }
+.god-tharos { color: #800080; font-weight: bold; text-shadow: 0px 0px 1px rgba(128,0,128,0.3); }
+.god-lysera { color: #5a5a5a; font-weight: bold; text-shadow: 0px 0px 1px rgba(90,90,90,0.3); }
+.god-nemor { color: #000000; font-weight: bold; text-shadow: 0px 0px 1px rgba(0,0,0,0.3); }
+.god-seris { color: #696969; font-weight: bold; text-shadow: 0px 0px 1px rgba(105,105,105,0.3); font-style: italic; }
+
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
