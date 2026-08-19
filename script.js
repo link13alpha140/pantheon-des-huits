@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navItems = document.querySelectorAll('#chapter-list li');
+    const navItems = document.querySelectorAll('#chapter-list li, .registry-btn');
     const chapters = document.querySelectorAll('.chapter');
 
     // 1. Découper tout le texte en spans individuels pour l'animation lettre par lettre
