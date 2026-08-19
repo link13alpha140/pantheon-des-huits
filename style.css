@@ -326,16 +326,19 @@ ul, ol {
 
 /* Registry Grid on Parchment */
 .registry-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
     margin-top: 20px;
 }
 .full-width {
-    grid-column: 1 / -1;
+    flex: 1 1 100%;
 }
 
 .clergy-card {
+    flex: 0 1 calc(50% - 10px);
+    box-sizing: border-box;
     background: rgba(0, 0, 0, 0.03);
     border: 1px solid rgba(0,0,0,0.1);
     border-left-width: 5px;
