@@ -21,7 +21,7 @@
 .god-eldric { color: #00008b; font-weight: bold; }
 .god-maera { color: #006400; font-weight: bold; }
 .god-tharos { color: #800080; font-weight: bold; }
-.god-lysera { color: #5a5a5a; font-weight: bold; }
+.god-lysera { color: #ffffff; font-weight: bold; text-shadow: 0 0 3px rgba(0,0,0,0.8); }
 .god-nemor { color: #000000; font-weight: bold; }
 .god-seris { color: #696969; font-weight: bold; font-style: italic; }
 
