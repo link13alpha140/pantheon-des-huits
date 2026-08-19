@@ -160,15 +160,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         btnPrev.addEventListener('click', () => {
+            const wasPlaying = !audio.paused;
             currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
             loadTrack(currentTrackIndex);
-            if(!audio.paused && audio.src) audio.play();
+            if(wasPlaying && audio.src) audio.play();
         });
 
         btnNext.addEventListener('click', () => {
+            const wasPlaying = !audio.paused;
             currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
             loadTrack(currentTrackIndex);
-            if(!audio.paused && audio.src) audio.play();
+            if(wasPlaying && audio.src) audio.play();
         });
 
         btnMute.addEventListener('click', () => {
