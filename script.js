@@ -112,4 +112,80 @@ document.addEventListener('DOMContentLoaded', () => {
             char.style.animationDelay = `${Math.random() * 0.5}s`;
         });
     }
+
+    // --- LECTEUR AUDIO LOGIQUE ---
+    // Vous pouvez remplacer ces URLs par des liens vers de vrais fichiers mp3 (ex: "music/chant1.mp3")
+    const tracks = [
+        { name: "Chant de l'Octuaire (À remplacer)", url: "" },
+        { name: "Veillée d'Eldric (À remplacer)", url: "" }
+    ];
+    let currentTrackIndex = 0;
+
+    const audio = document.getElementById('bg-audio');
+    const btnPlay = document.getElementById('btn-play');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const btnMute = document.getElementById('btn-mute');
+    const volumeSlider = document.getElementById('volume-slider');
+    const trackNameDisplay = document.getElementById('track-name');
+
+    if (audio) {
+        audio.volume = volumeSlider.value;
+        
+        function loadTrack(index) {
+            if(tracks.length === 0 || !tracks[index].url) {
+                trackNameDisplay.textContent = "Aucune musique (Ajoutez vos mp3)";
+                return;
+            }
+            audio.src = tracks[index].url;
+            trackNameDisplay.textContent = tracks[index].name;
+        }
+
+        loadTrack(currentTrackIndex);
+
+        btnPlay.addEventListener('click', () => {
+            if (!audio.src || audio.src.endsWith(window.location.href)) {
+                alert("Vous devez d'abord ajouter de la musique ! (Modifiez la variable 'tracks' dans script.js avec vos liens mp3)");
+                return;
+            }
+            
+            if (audio.paused) {
+                audio.play().catch(e => console.log("Lecture auto bloquée", e));
+                btnPlay.textContent = '⏸';
+            } else {
+                audio.pause();
+                btnPlay.textContent = '▶';
+            }
+        });
+
+        btnPrev.addEventListener('click', () => {
+            currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+            loadTrack(currentTrackIndex);
+            if(!audio.paused && audio.src) audio.play();
+        });
+
+        btnNext.addEventListener('click', () => {
+            currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+            loadTrack(currentTrackIndex);
+            if(!audio.paused && audio.src) audio.play();
+        });
+
+        btnMute.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            btnMute.textContent = audio.muted ? '🔇' : '🔊';
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value;
+            if(audio.volume == 0) {
+                btnMute.textContent = '🔇';
+            } else if (!audio.muted) {
+                btnMute.textContent = '🔊';
+            }
+        });
+
+        audio.addEventListener('ended', () => {
+            btnNext.click();
+        });
+    }
 });

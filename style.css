@@ -233,3 +233,141 @@ ul, ol {
         padding: 2rem;
     }
 }
+
+/* --- RIGHT SIDEBAR WIDGETS --- */
+.sidebar-right {
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+.widget {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.widget-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    color: var(--sidebar-text);
+}
+
+/* Audio Player */
+.audio-player {
+    text-align: center;
+}
+
+.track-info {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-size: 1rem;
+    color: #e0d0b0;
+}
+
+.audio-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.audio-btn {
+    background: transparent;
+    border: none;
+    color: var(--sidebar-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.1s;
+}
+
+.audio-btn:hover {
+    color: var(--highlight);
+    transform: scale(1.1);
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#volume-slider {
+    width: 60%;
+    cursor: pointer;
+    accent-color: var(--highlight);
+}
+
+/* Registry */
+.clergy-card {
+    background: rgba(244, 228, 188, 0.05);
+    border-left: 4px solid var(--border-color);
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 0 5px 5px 0;
+}
+
+.clergy-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #f4e4bc;
+}
+
+.clergy-role {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.preachers-list {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+.preachers-list ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin: 5px 0 0 0;
+}
+
+.grand-octon {
+    border: 2px solid;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 139, 0.15); /* Eldric blue tint */
+}
+
+.grand-octon .rank-title {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.3rem;
+    color: var(--highlight);
+    margin-bottom: 5px;
+}
+
+.grand-octon .preachers-list {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.registry-divider {
+    border: none;
+    border-top: 1px dashed var(--border-color);
+    margin: 20px 0;
+}
+
+/* God Borders */
+.eldric-border { border-color: #00008b !important; }
+.aldor-border { border-left-color: #b30000 !important; }
+.vaelis-border { border-left-color: #b8860b !important; }
+.maera-border { border-left-color: #006400 !important; }
+.tharos-border { border-left-color: #800080 !important; }
+.lysera-border { border-left-color: #ffffff !important; }
+.nemor-border { border-left-color: #000000 !important; }
+.seris-border { border-left-color: #696969 !important; }

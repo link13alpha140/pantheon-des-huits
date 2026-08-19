@@ -330,11 +330,110 @@
             </div>
         </main>
 
-        <!-- Right Sidebar: Placeholder -->
+        <!-- Right Sidebar: Annexes -->
         <aside class="sidebar-right">
             <h2>Annexes</h2>
-            <div class="placeholder-content">
-                <p>Espace réservé pour de futurs ajouts (chants sacrés, liste du clergé, carte des Octuaires, etc.)</p>
+            
+            <!-- Widget Musique -->
+            <div class="widget audio-player">
+                <h3 class="widget-title">Chants de l'Arbre</h3>
+                <div class="track-info">
+                    <span id="track-name">Aucune musique chargée</span>
+                </div>
+                <div class="audio-controls">
+                    <button id="btn-prev" class="audio-btn" title="Précédent">⏮</button>
+                    <button id="btn-play" class="audio-btn" title="Lecture/Pause">▶</button>
+                    <button id="btn-next" class="audio-btn" title="Suivant">⏭</button>
+                </div>
+                <div class="volume-container">
+                    <button id="btn-mute" class="audio-btn" title="Muet">🔊</button>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.3">
+                </div>
+                <audio id="bg-audio"></audio>
+            </div>
+
+            <!-- Widget Registre -->
+            <div class="widget registry">
+                <h3 class="widget-title">Registre du Clergé</h3>
+                
+                <!-- Grand Octon (Eldric) -->
+                <div class="clergy-card grand-octon eldric-border">
+                    <div class="rank-title">Grand Octon</div>
+                    <div class="clergy-name">Aramis d'Azur</div>
+                    <div class="clergy-role"><span class="god-eldric">Voix d'Eldric</span></div>
+                    <div class="preachers-list">
+                        <strong>Prêcheurs affiliés :</strong>
+                        <ul>
+                            <li><em>(Aucun)</em></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="registry-divider">
+
+                <!-- Octon Aldor -->
+                <div class="clergy-card aldor-border">
+                    <div class="clergy-name">[Place Libre]</div>
+                    <div class="clergy-role">Octon de la Flamme (<span class="god-aldor">Aldor</span>)</div>
+                    <div class="preachers-list">
+                        <ul><li><em>[Prêcheur(se)...]</em></li></ul>
+                    </div>
+                </div>
+
+                <!-- Octon Vaelis -->
+                <div class="clergy-card vaelis-border">
+                    <div class="clergy-name">[Place Libre]</div>
+                    <div class="clergy-role">Octon de la Balance (<span class="god-vaelis">Vaelis</span>)</div>
+                    <div class="preachers-list">
+                        <ul><li><em>[Prêcheur(se)...]</em></li></ul>
+                    </div>
+                </div>
+
+                <!-- Octon Maëra -->
+                <div class="clergy-card maera-border">
+                    <div class="clergy-name">[Place Libre]</div>
+                    <div class="clergy-role">Octa de la Serpe (<span class="god-maera">Maëra</span>)</div>
+                    <div class="preachers-list">
+                        <ul><li><em>[Prêcheur(se)...]</em></li></ul>
+                    </div>
+                </div>
+
+                <!-- Octon Tharos -->
+                <div class="clergy-card tharos-border">
+                    <div class="clergy-name">[Place Libre]</div>
+                    <div class="clergy-role">Octon du Labeur (<span class="god-tharos">Tharos</span>)</div>
+                    <div class="preachers-list">
+                        <ul><li><em>[Prêcheur(se)...]</em></li></ul>
+                    </div>
+                </div>
+
+                <!-- Octon Lysera -->
+                <div class="clergy-card lysera-border">
+                    <div class="clergy-name">[Place Libre]</div>
+                    <div class="clergy-role">Octa des Songes (<span class="god-lysera">Lysera</span>)</div>
+                    <div class="preachers-list">
+                        <ul><li><em>[Prêcheur(se)...]</em></li></ul>
+                    </div>
+                </div>
+
+                <!-- Octon Nemor -->
+                <div class="clergy-card nemor-border">
+                    <div class="clergy-name">[Place Libre]</div>
+                    <div class="clergy-role">Octon du Seuil (<span class="god-nemor">Nemor</span>)</div>
+                    <div class="preachers-list">
+                        <ul><li><em>[Prêcheur(se)...]</em></li></ul>
+                    </div>
+                </div>
+
+                <!-- Octon Seris -->
+                <div class="clergy-card seris-border">
+                    <div class="clergy-name">[Place Libre]</div>
+                    <div class="clergy-role">Octa des Masques (<span class="god-seris">Seris</span>)</div>
+                    <div class="preachers-list">
+                        <ul><li><em>[Prêcheur(se)...]</em></li></ul>
+                    </div>
+                </div>
+
             </div>
         </aside>
     </div>
