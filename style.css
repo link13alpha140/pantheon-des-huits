@@ -156,11 +156,11 @@ ul, ol {
 }
 
 .char.in-anim {
-    animation: magicalIn 0.8s ease-out forwards;
+    animation: magicalIn 0.8s ease-out both;
 }
 
 .char.out-anim {
-    animation: burnOut 0.8s ease-in forwards;
+    animation: burnOut 0.8s ease-in both;
 }
 
 @keyframes magicalIn {
