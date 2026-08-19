@@ -332,10 +332,6 @@ ul, ol {
     justify-content: center;
     margin-top: 20px;
 }
-.full-width {
-    flex: 1 1 100%;
-}
-
 .clergy-card {
     flex: 0 1 calc(50% - 10px);
     box-sizing: border-box;
@@ -345,6 +341,10 @@ ul, ol {
     padding: 15px;
     margin-bottom: 0;
     border-radius: 5px;
+}
+
+.clergy-card.full-width {
+    flex: 1 1 100%;
 }
 
 .clergy-name {
