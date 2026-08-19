@@ -129,19 +129,83 @@ ul, ol {
     position: relative;
 }
 
-/* Chapters visibility */
+/* Chapters visibility & Animations */
 .chapter {
     display: none;
-    animation: fadeIn 0.5s ease;
+    position: relative; /* Pour l'effet de lumière qui se superpose */
 }
 
 .chapter.active-chapter {
     display: block;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* 1. OUTGOING: Effet de poussière / braises (Dark Souls) */
+.chapter.outgoing {
+    animation: dustFadeOut 1s cubic-bezier(0.5, 0, 1, 1) forwards;
+    pointer-events: none;
+}
+
+@keyframes dustFadeOut {
+    0% {
+        opacity: 1;
+        filter: blur(0px) brightness(1);
+        transform: translateY(0) scale(1);
+    }
+    40% {
+        filter: blur(2px) brightness(1.5) drop-shadow(0 0 10px rgba(255, 100, 0, 0.8));
+    }
+    100% {
+        opacity: 0;
+        filter: blur(12px) brightness(2) drop-shadow(0 -30px 20px rgba(255, 50, 0, 0));
+        transform: translateY(-40px) scale(0.95);
+    }
+}
+
+/* 2. INCOMING: Balayage lumineux de gauche à droite */
+.chapter.incoming {
+    /* Le clip-path utilise des valeurs négatives pour ne pas couper le halo de lumière sur les bords */
+    animation: sweepReveal 1.5s ease-in-out forwards;
+}
+
+/* Le rayon de lumière qui balaye l'écran */
+.chapter.incoming::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    height: 120%;
+    width: 4px;
+    background: #ffffff;
+    box-shadow: 0 0 30px 15px rgba(255, 255, 220, 0.9), 0 0 60px 30px rgba(220, 160, 50, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    animation: lightSweep 1.5s ease-in-out forwards;
+}
+
+@keyframes sweepReveal {
+    0% {
+        clip-path: inset(-20% 100% -20% -20%);
+    }
+    100% {
+        clip-path: inset(-20% -20% -20% -20%);
+    }
+}
+
+@keyframes lightSweep {
+    0% {
+        left: 0%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
 }
 
 .subtitle {
