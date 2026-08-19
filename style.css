@@ -1,0 +1,179 @@
+/* Reset and Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #1a1a1a;
+    --parchment-bg: #f4e4bc;
+    --text-main: #2c1b0c;
+    --highlight: #8b0000;
+    --sidebar-bg: #0f0f0f;
+    --sidebar-text: #c0b090;
+    --border-color: #4a3622;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Lora', serif;
+    background-image: radial-gradient(circle at center, #2a2a2a 0%, #111 100%);
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--highlight);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h2 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+h3 {
+    text-align: left;
+    margin-top: 1.5rem;
+    color: #4a1515;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    line-height: 1.6;
+}
+
+/* Layout */
+.layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* Sidebars */
+.sidebar-left, .sidebar-right {
+    flex: 0 0 250px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 2rem 1rem;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+.sidebar-left h2, .sidebar-right h2 {
+    color: var(--sidebar-text);
+    border-bottom: 1px solid var(--sidebar-text);
+    font-size: 1.2rem;
+}
+
+.sidebar-left ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-left li {
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-left li:hover {
+    background-color: #222;
+    border-left: 3px solid var(--highlight);
+}
+
+.sidebar-left li.active {
+    background-color: #2a1111;
+    border-left: 3px solid var(--highlight);
+    color: #fff;
+    font-weight: bold;
+}
+
+.placeholder-content {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Center Parchment */
+.parchment-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.parchment {
+    background-color: var(--parchment-bg);
+    width: 100%;
+    max-width: 800px;
+    padding: 3rem 4rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8), inset 0 0 30px rgba(139, 69, 19, 0.2);
+    border-radius: 5px;
+    background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+    position: relative;
+}
+
+/* Chapters visibility */
+.chapter {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.chapter.active-chapter {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.god-entry, .rank {
+    background: rgba(0,0,0,0.03);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.god-entry h3, .rank h3 {
+    margin-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .layout {
+        flex-direction: column;
+    }
+    .sidebar-left, .sidebar-right {
+        flex: auto;
+        border: none;
+        border-bottom: 2px solid #333;
+    }
+    .parchment {
+        padding: 2rem;
+    }
+}
