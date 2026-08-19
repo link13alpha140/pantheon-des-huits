@@ -114,10 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- LECTEUR AUDIO LOGIQUE ---
-    // Vous pouvez remplacer ces URLs par des liens vers de vrais fichiers mp3 (ex: "music/chant1.mp3")
     const tracks = [
-        { name: "Chant de l'Octuaire (À remplacer)", url: "" },
-        { name: "Veillée d'Eldric (À remplacer)", url: "" }
+        { name: "Chant de l'Octuaire (Folk Round)", url: "music/folk_round.mp3" },
+        { name: "Veillée d'Eldric (Village Consort)", url: "music/village_consort.mp3" },
+        { name: "Marche d'Aldor (Lord of the Land)", url: "music/lord_of_the_land.mp3" },
+        { name: "Bal de Seris (The Britons)", url: "music/the_britons.mp3" }
     ];
     let currentTrackIndex = 0;
 
